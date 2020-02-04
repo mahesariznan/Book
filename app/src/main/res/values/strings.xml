@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Apps Books</string>
+    <string name="tab_book">New Book</string>
+    <string name="tab_genre">Genre</string>
+    <string name="tab_writer">Writer</string>
+
+    <string name="book_detail">Book Detail</string>
+    <string name="writer_detail">Writer Detail</string>
+</resources>
