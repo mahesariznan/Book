@@ -1,5 +1,5 @@
 # Book
-Book apps mvvm
+Book Android apps mvvm
 
 The project implemented with libraries such as:
 1. Retrofit for networking
