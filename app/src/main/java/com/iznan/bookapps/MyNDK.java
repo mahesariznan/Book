@@ -6,6 +6,7 @@ public class MyNDK {
         System.loadLibrary("MyLibrary");
     }
 
-    public native String getMyString();
+    public static native String getMyString();
+    public static native String getApiKey();
 
 }

@@ -2,9 +2,9 @@ package com.iznan.bookapps.ui.detail
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.iznan.bookapps.MyNDK
 import com.iznan.bookapps.model.BookModel
 import com.iznan.bookapps.repo.RemoteRepository
-import com.iznan.bookapps.repo.RemoteRepository.Companion.API_KEY
 import com.iznan.bookapps.repo.RemoteRepository.Companion.BASE_API
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
@@ -33,7 +33,7 @@ class DetailViewModel(private val remoteRepository: RemoteRepository) : ViewMode
                     response.result?.let {
                         title.value = it.title
                         desc.value = it.synopsis
-                        poster.value = BASE_API + "files/" + it.coverUrl + API_KEY
+                        poster.value = BASE_API + "files/" + it.coverUrl + MyNDK.getApiKey()
                         writer.value = it.writerByWriterId?.userByUserId?.name
                         status.value = it.status
                         it.genres?.let {
@@ -50,7 +50,7 @@ class DetailViewModel(private val remoteRepository: RemoteRepository) : ViewMode
                                 listOfRelatedBook.add(
                                     BookModel(
                                         relatedBook!!.id!!,
-                                        BASE_API + "files/" + relatedBook.coverUrl!! + API_KEY,
+                                        BASE_API + "files/" + relatedBook.coverUrl!! + MyNDK.getApiKey(),
                                         relatedBook.title!!
                                     )
                                 )
@@ -75,7 +75,7 @@ class DetailViewModel(private val remoteRepository: RemoteRepository) : ViewMode
                     response.result?.let {
                         title.value = it.name
                         desc.value = it.deskripsi
-                        poster.value = BASE_API + "files/" + it.photoUrl + API_KEY
+                        poster.value = BASE_API + "files/" + it.photoUrl + MyNDK.getApiKey()
                         email.value = it.email
                         follower.value = it.countFollower?.toString()
                         it.karya?.let {
@@ -90,7 +90,7 @@ class DetailViewModel(private val remoteRepository: RemoteRepository) : ViewMode
                                 listOfRelatedBook.add(
                                     BookModel(
                                         relatedBook!!.id!!,
-                                        BASE_API + "files/" + relatedBook.coverUrl!! + API_KEY,
+                                        BASE_API + "files/" + relatedBook.coverUrl!! + MyNDK.getApiKey(),
                                         relatedBook.title!!
                                     )
                                 )

@@ -13,7 +13,15 @@ extern "C" {
  * Signature: ()Ljava/lang/String;
  */
 JNIEXPORT jstring JNICALL Java_com_iznan_bookapps_MyNDK_getMyString
-  (JNIEnv *, jobject);
+  (JNIEnv *, jclass);
+
+/*
+ * Class:     com_iznan_bookapps_MyNDK
+ * Method:    getApiKey
+ * Signature: ()Ljava/lang/String;
+ */
+JNIEXPORT jstring JNICALL Java_com_iznan_bookapps_MyNDK_getApiKey
+  (JNIEnv *, jclass);
 
 #ifdef __cplusplus
 }

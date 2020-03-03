@@ -20,7 +20,7 @@ class MainActivity : AppCompatActivity() {
         val tabs: TabLayout = findViewById(R.id.tabs)
         tabs.setupWithViewPager(viewPager)
 
-        var myNDK = MyNDK()
-        Log.e("izn",myNDK.myString)
+        Log.e("izn",MyNDK.getMyString())
+        Log.e("izn",MyNDK.getApiKey())
     }
 }
